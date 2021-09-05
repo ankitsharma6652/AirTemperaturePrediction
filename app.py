@@ -63,8 +63,8 @@ def elastic_net_model(x_train, x_test, y_train, y_test):
 @cross_origin()
 @app.route('/showReport', methods=["GET"])
 def generate_pandas_profiling_report():
-    report = ProfileReport(df)
-    report.to_file('templates/output.html')
+    # report = ProfileReport(df)
+    # report.to_file('templates/output.html')
 
     return render_template(r'output.html')
 
