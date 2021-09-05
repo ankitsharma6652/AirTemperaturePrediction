@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<form action="/modelBuilding">
+<!--    Show Pandas Profiling report <a href="df_to_html.html",value="Click"></a>-->
+    <button formaction="/modelAccuracy">Show Model's Accuracy</button>
+    <button formaction="/showDataset">Show Dataset</button>
+    <button formaction="/showReport">Show Pandas Profiling Report</button>
+     <button formaction="/predict">Predict Air Temperature</button>
+
+
+</form>

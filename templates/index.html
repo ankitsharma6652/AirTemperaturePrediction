@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+
+    <h1 style="text-align: center">Predict Air Quality</h1>
+
+    <div class="form">
+
+        <form action="/predict" method="POST">
+            Process Temperature:<input type="number" name="process_temperature" id="process_temperature" placeholder="Process Temperature"><br>
+            Rotational Speed:<input type="number" name="rpm" id="rpm" placeholder="Rotational Speed"><br>
+            Torque:<input type="number" name="torque" id="torque" placeholder="Torque"><br>
+            Tool Wear:<input type="number" name="tool_wear" id="tool_wear" placeholder="Tool Wear"><br>
+            Machine Failure<select name="mf" id="mf">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+            Tool Wear Failure<select name="twf" id="twf">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+            Heat dissipation failure<select name="hdf" id="hdf">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+            power failure<select name="pwf" id="pwf">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+            overstrain failure<select name="osf" id="osf">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+            random failures <select name="rnf" id="rnf">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+            </select><br>
+            Select Model<select name="model" id="model">
+            <option value="lr">Linear Model</option>
+            <option value="lasso">Lasso Model</option>
+            <option value="ridge">Ridge Model</option>
+            <option value="elasticnet">ElasticNet Model</option>
+            </select><br>
+            <br>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
